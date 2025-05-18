@@ -1,9 +1,9 @@
 package Patterns.Stars;
 
-public class InvertedRightPyramid {
-    public static void pattern5(int n) {
+public class SolidRectangle {
+    public static void pattern1(int n) {
         for (int i = 1; i <= n; i++) {
-            for (int j = i; j <= n; j++) {
+            for (int j = 1; j <= n; j++) {
                 System.out.print("* ");
             }
             System.out.println();
@@ -11,6 +11,6 @@ public class InvertedRightPyramid {
     }
     public static void main(String[] args) {
         int n = 6;
-        pattern5(n);
+        pattern1(n);
     }
 }
