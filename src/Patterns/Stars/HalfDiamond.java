@@ -35,7 +35,7 @@ public class HalfDiamond {
 
     }
     public static void main(String[] args) {
-        int n = 4;
+        int n = 6;
         pattern10(n);
     }
 }
