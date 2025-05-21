@@ -1,5 +1,7 @@
 package Patterns.Numbers;
 
+import java.util.Scanner;
+
 public class SolidRectangleNumber {
     public static void pattern22(int n) {
         for(int i=0;i<2*n-1;i++){
@@ -13,7 +15,13 @@ public class SolidRectangleNumber {
         }
     }
     public static void main(String[] args) {
-        int n = 9;
-        pattern22(n);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of test cases : ");
+        int testCase = scanner.nextInt();
+        for (int i = 0; i < testCase; i++ ) {
+            System.out.print("Enter the value of test case " + (i+1) + " : " );
+            int n = scanner.nextInt();
+            pattern22(n);
+        }
     }
 }
