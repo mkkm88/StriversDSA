@@ -3,14 +3,18 @@ package BasicMaths;
 import java.util.Scanner;
 
 public class ReverseNumber {
-    public static void reverseNumber(long num) {
+    public static int reverseNumber(int num) {
         int revNum = 0;
-        while (num > 0) {
-            int lastDigit = (int) (num % 10);
-            revNum = (revNum * 10) + lastDigit;
-            num = num / 10;
+        while (num != 0) {
+            int lastDigit = num % 10;
+            if (revNum > Integer.MAX_VALUE / 10 || revNum < Integer.MIN_VALUE / 10) {
+                return 0;
+            } else {
+                revNum = (revNum * 10) + lastDigit;
+                num = num / 10;
+            }
         }
-        System.out.println("Reverse number is : " + revNum);
+       return revNum;
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,8 +22,9 @@ public class ReverseNumber {
         int testcase = scanner.nextInt();
         for (int i = 0; i < testcase; i++ ) {
             System.out.print("Enter the value of test case " + (i+1) + " : " );
-            long num = scanner.nextLong();
-            reverseNumber(num);
+            int num = scanner.nextInt();
+            int result = reverseNumber(num);
+            System.out.println("Reverse number is : " + result);
         }
     }
 }

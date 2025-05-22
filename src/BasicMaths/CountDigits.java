@@ -3,13 +3,13 @@ package BasicMaths;
 import java.util.Scanner;
 
 public class CountDigits {
-    public static void countDigit(long num) {
+    public static int countDigit(long num) {
         int count = 0;
         while (num > 0) {
             count++;
             num = num / 10;
         }
-        System.out.println("Number of digits are : " + count);
+        return count;
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,7 +18,8 @@ public class CountDigits {
         for (int i = 0; i < testcase; i++ ) {
             System.out.print("Enter the value of test case " + (i+1) + " : " );
             long num = scanner.nextLong();
-            countDigit(num);
+            int result = countDigit(num);
+            System.out.println("Number of digits are : " + result);
         }
     }
 }
