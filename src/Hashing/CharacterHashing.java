@@ -11,7 +11,7 @@ public class CharacterHashing {
         // precompute:
         int[] hash = new int[26];
         for (int i=0; i<s.length(); i++) {
-            hash[s.charAt(i) - 'a']++;
+            hash[s.charAt(i) - 'A']++;
         }
 
         System.out.print("Enter the number of operations : ");
@@ -19,7 +19,7 @@ public class CharacterHashing {
         while (q-- > 0) {
             char c = scanner.next().charAt(0);
             // fetch:
-            System.out.println("The char " + c + " appears " + hash[c - 'a'] + " times");
+            System.out.println("The char " + c + " appears " + hash[c - 'A'] + " times");
         }
     }
 }
