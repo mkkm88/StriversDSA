@@ -26,9 +26,9 @@ public class IntegerHashingUsingHashmap {
         }
 
         // Iterate over the map
-        /*for (Map.Entry<Integer, Integer> it : mp.entrySet()) {
+        for (Map.Entry<Integer, Integer> it : mp.entrySet()) {
             System.out.println(it.getKey() + "->" + it.getValue());
-        }*/
+        }
 
         System.out.print("Enter the number of queries : ");
         int q = scanner.nextInt();
