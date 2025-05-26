@@ -2,7 +2,7 @@ package Hashing;
 
 import java.util.Scanner;
 
-public class Hashing {
+public class IntegerHashing {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the size of array : ");
