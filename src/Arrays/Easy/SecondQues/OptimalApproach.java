@@ -1,6 +1,7 @@
 package Arrays.Easy.SecondQues;
 
 public class OptimalApproach {
+    // TC => O(n) || SC => O(1)
     public static int secondSmallest(int[] arr, int n) {
         if (n < 2) {
             return -1;

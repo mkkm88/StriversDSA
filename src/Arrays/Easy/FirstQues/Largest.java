@@ -1,4 +1,4 @@
-package Arrays.Easy;
+package Arrays.Easy.FirstQues;
 
 import java.util.Arrays;
 
