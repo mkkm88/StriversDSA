@@ -1,8 +1,9 @@
-package Arrays.Easy;
+package Arrays.Easy.SecondQues;
 
 import java.util.Arrays;
 
-public class SecondSmalledAndSecondLargest {
+public class BruteForceApproach {
+    // TC => O(nlogn) || SC = O(1)
     public static void getElements(int[] arr, int n) {
         if (n == 0 || n == 1 || n == 2) {
             System.out.print(-1);
