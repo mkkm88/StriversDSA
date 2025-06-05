@@ -1,6 +1,7 @@
 package Arrays.Easy.FourthQues;
 
 public class RemoveDuplicates {
+    // TC => O(n) || SC => O(1)
     public static int removeDups(int[] arr) {
         int i = 0;
         for (int j=1; j<arr.length; j++) {

@@ -1,10 +1,9 @@
 package Arrays.Easy.SeventhQues;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class MoveZerosToEnd {
     public static int[] moveToEnd(int[] arr, int n) {
+        // TC => O(N) + O(X) + O(N-X) ~ O(2*N)   || SC => O(N)
+
         /*ArrayList<Integer> temp = new ArrayList<>();
 
         // copy non-zero from original to temp arrayList
@@ -28,6 +27,7 @@ public class MoveZerosToEnd {
         }
         return arr;*/
 
+        // TC => O(N) || SC => O(N)
         int[] temp = new int[n];
         int j = 0;
         int k = n-1;

@@ -3,6 +3,7 @@ package Arrays.Easy.FourthQues;
 import java.util.HashSet;
 
 public class UsingHashSet {
+    // TC => O(n*log(n))+O(n) || SC => O(n)
     public static int removeDuplicates(int[] arr) {
         HashSet<Integer> set = new HashSet<>();
         for (int i=0; i<arr.length; i++) {
