@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UsingMap {
+    // TC => O((m+n)log(m+n)) && SC => O(n+m) || O(1)
     public static ArrayList<Integer> printUnion(int[] arr1, int[] arr2, int n, int m) {
         HashMap<Integer, Integer> freq = new HashMap<>();
 
