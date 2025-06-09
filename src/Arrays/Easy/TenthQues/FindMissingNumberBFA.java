@@ -1,22 +1,25 @@
 package Arrays.Easy.TenthQues;
 
 public class FindMissingNumberBFA {
-    public static void main(String[] args) {
-        int n = 5;
-
-        // array of n-1 size
-        int[] arr = {1,2,4,5};
-
-        // array of n size
-        int[] temp = {1,2,3,4,5};
-
-        int j = 0;
-        for (int i=0; i<n-1; i++) {
-            if (arr[i] != temp[j]) {
-                System.out.println("Missing number in the array is : "+ temp[j]);
-                break;
+    public static int missinNumber(int[] arr, int n) {
+        for (int i=1; i<=n; i++) {
+            int flag = 0;
+            for (int j=0; j<n-1; j++) {
+                if (arr[j] == i) {
+                    flag = 1;
+                    break;
+                }
             }
-            j++;
+            if (flag == 0) return i;
         }
+        return -1;
+    }
+    public static void main(String[] args) {
+        int n = 10;
+        // array of n-1 size
+        int[] arr = {1,2,3,4,5,6,7,8,9};
+
+        int ans = missinNumber(arr, n);
+        System.out.println("The missing number is : " + ans);
     }
 }
