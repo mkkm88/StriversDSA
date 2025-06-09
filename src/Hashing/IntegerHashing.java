@@ -14,6 +14,7 @@ public class IntegerHashing {
             arr[i] = scanner.nextInt();
         }
 
+        // pre-compute
         int[] hash = new int[13];
         for (int i=0; i<size; i++) {
             hash[arr[i]] += 1;
@@ -23,6 +24,7 @@ public class IntegerHashing {
         int q = scanner.nextInt();
         while (q-- != 0) {
             int num = scanner.nextInt();
+            // fetching
             System.out.println("The number found " + hash[num] + " times");
         }
     }
