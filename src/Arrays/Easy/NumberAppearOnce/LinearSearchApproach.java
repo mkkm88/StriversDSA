@@ -1,6 +1,6 @@
 package Arrays.Easy.NumberAppearOnce;
 
-public class BruteForceApproach {
+public class LinearSearchApproach {
     public static int numberAppearOnce(int[] arr, int n) {
         for (int i=0; i<n; i++) {
             int num = arr[i];
