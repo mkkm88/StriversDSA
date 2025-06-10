@@ -7,7 +7,7 @@ public class SummationApproach {
 
         // sum of the array elements
         int s2 = 0;
-        for (int i=0; i<n-1; i++) {
+        for (int i=0; i<=n-1; i++) {
             s2 += arr[i];
         }
 
@@ -15,8 +15,8 @@ public class SummationApproach {
         return s1-s2;
     }
     public static void main(String[] args) {
-        int n = 10;
-        int[] arr = {1,2,3,4,5,6,7,8,9};
+        int n = 3;
+        int[] arr = {3,0,1};
 
         int ans = missingNumber(arr, n);
         System.out.println("The missing number is : " + ans);

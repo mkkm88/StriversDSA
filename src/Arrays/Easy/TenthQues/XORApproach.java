@@ -22,7 +22,7 @@ public class XORApproach {
     }
     public static void main(String[] args) {
         int n = 10;
-        int[] arr = {2,3,4,5,6,7,8,9,10};
+        int[] arr = {3,0,1};
 
         int ans = missingNumber(arr, n);
         System.out.println("the missing number is : " + ans);
