@@ -19,7 +19,7 @@ public class UsingTwoLoops {
         int n = arr.length;
         long k = 10;
 
-        int len = getLongestSugbarray(arr, n, k);
+        int len = getLongestSubarray(arr, n, k);
         System.out.println(len);
     }
 }
