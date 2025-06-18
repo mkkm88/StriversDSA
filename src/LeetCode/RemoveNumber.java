@@ -1,7 +1,5 @@
 package LeetCode;
 
-import java.util.Arrays;
-
 public class RemoveNumber {
     public static int removeNumber(int[] nums, int val) {
         int n = nums.length;
