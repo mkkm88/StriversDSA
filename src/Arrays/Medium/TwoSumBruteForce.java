@@ -1,6 +1,6 @@
 package Arrays.Medium;
 
-public class TwoSum {
+public class TwoSumBruteForce {
     public static String twoSum(int[] arr, int target) {
         int n = arr.length;
 
