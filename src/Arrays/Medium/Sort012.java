@@ -1,6 +1,4 @@
-package CodingNinjas;
-
-import java.util.Arrays;
+package Arrays.Medium;
 
 public class Sort012 {
     /*public static int[] sort012(int[] arr, int n) {
