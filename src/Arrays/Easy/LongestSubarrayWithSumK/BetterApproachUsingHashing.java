@@ -11,21 +11,17 @@ public class BetterApproachUsingHashing {
         for (int i=0; i<n; i++) {
             // calculate the prefix sum till index i
             sum += arr[i];
-
             // if the sum = k, update the maxLen
             if (sum == k) {
                 maxLen = Math.max(maxLen, i+1);
             }
-
             // calculate the sum of remaining part i.e. x-k
             long rem = sum - k;
-
             // calculate the length and update maxLen
             if (preSumMap.containsKey(rem)) {
                 int len = i - preSumMap.get(rem);
                 maxLen = Math.max(maxLen, len);
             }
-
             // finally, update the map checking the condition
             if (!preSumMap.containsKey(sum)) {
                 preSumMap.put(sum, i);
