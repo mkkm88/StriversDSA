@@ -1,4 +1,4 @@
-package Arrays.Medium;
+package Arrays.Medium.TwoSum;
 
 public class TwoSumBruteForce {
     public static String twoSum(int[] arr, int target) {
