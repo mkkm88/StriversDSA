@@ -1,15 +1,13 @@
 package Arrays.Medium.KadanesAlgorithm;
 
-public class MaximumSubArraySumBFA {
+public class BetterApproach {
     public static long maximumSubArraySum(int[] arr, int n) {
         long maxSum = Long.MIN_VALUE;
 
         for (int i=0; i<n; i++) {
+            int sum = 0;
             for (int j=i; j<n; j++) {
-                int sum = 0;
-                for (int k=i; k<j; k++) {
-                    sum += arr[k];
-                }
+                sum += arr[j];
                 maxSum = Math.max(maxSum, sum);
             }
         }
