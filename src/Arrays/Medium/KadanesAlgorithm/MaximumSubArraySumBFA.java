@@ -4,14 +4,12 @@ public class MaximumSubArraySumBFA {
     public static int maximumSubArraySum(int[] arr, int n) {
         int maxSum = Integer.MIN_VALUE;
         for (int i=0; i<n; i++) {
+            int sum = 0;
             for (int j=i; j<n; j++) {
-                int sum = 0;
-                for (int k=i; k<j; k++) {
-                    sum += arr[k];
-                }
+                sum += arr[j];
                 maxSum = Math.max(maxSum, sum);
             }
-        }
+        }g
         return maxSum;
     }
     public static void main(String[] args) {
