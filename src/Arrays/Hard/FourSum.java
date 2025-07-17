@@ -11,10 +11,12 @@ public class FourSum {
             for (int j=i+1; j<n; j++) {
                 for (int k=j+1; k<n; k++) {
                     for (int l=k+1; l<n; l++) {
-                        int sum = arr[i] + arr[j] + arr[k] + arr[l];
+                        long sum = (long) arr[i] + arr[j];
+                        sum += arr[k];
+                        sum += arr[l];
                         if (sum == target) {
                             List<Integer> temp = Arrays.asList(arr[i], arr[j], arr[k], arr[l]);
-                            temp.sort(null);
+                            Collections.sort(temp);
                             set.add(temp);
                         }
                     }
@@ -24,15 +26,17 @@ public class FourSum {
 
         /*for (int i=0; i<n; i++) {
             for (int j=i+1; j<n; j++) {
-                HashSet<Integer> hashSet = new HashSet<>();
+                Set<Long> hashSet = new HashSet<>();
                 for (int k=j+1; k<n; k++) {
-                    int fourth = target -(arr[i] + arr[j] + arr[k]);
+                    long sum = arr[i] + arr[j];
+                    sum += arr[k];
+                    long fourth = target - sum;
                     if (hashSet.contains(fourth)) {
-                        List<Integer> temp = Arrays.asList(arr[i], arr[j], arr[k], fourth);
-                        temp.sort(null);
+                        List<Integer> temp = Arrays.asList(arr[i], arr[j], arr[k], (int) fourth);
+                        temp.sort(Integer::compareTo);
                         set.add(temp);
                     }
-                    hashSet.add(arr[k]);
+                    hashSet.add((long) arr[k]);
                 }
             }
         }*/
@@ -45,7 +49,9 @@ public class FourSum {
                 int k = j + 1;
                 int l = n - 1;
                 while (k < l) {
-                    int sum = arr[i] + arr[j] + arr[k] + arr[l];
+                    long sum = arr[i] + arr[j];
+                    sum += arr[k];
+                    sum += arr[l];
                     if (sum < target) {
                         k++;
                     } else if (sum > target) {
@@ -63,8 +69,8 @@ public class FourSum {
         return new ArrayList<>(set);
     }
     public static void main(String[] args) {
-        int[] arr = {2,3,1,2,3,1,4,4,5,5,2,3,1,4};
-        int target = 8;
+        int[] arr = {1000000000,1000000000,1000000000,1000000000};
+        int target = -294967296;
         List<List<Integer>> ans = quadruplets(arr, target);
         for (List<Integer> it : ans) {
             System.out.print("[");
