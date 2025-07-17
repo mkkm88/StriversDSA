@@ -7,7 +7,7 @@ public class FourSum {
         int n = arr.length;
         Set<List<Integer>> set = new HashSet<>();
 
-        for (int i=0; i<n; i++) {
+        /*for (int i=0; i<n; i++) {
             for (int j=i+1; j<n; j++) {
                 for (int k=j+1; k<n; k++) {
                     for (int l=k+1; l<n; l++) {
@@ -18,6 +18,21 @@ public class FourSum {
                             set.add(temp);
                         }
                     }
+                }
+            }
+        }*/
+
+        for (int i=0; i<n; i++) {
+            for (int j=i+1; j<n; j++) {
+                HashSet<Integer> hashSet = new HashSet<>();
+                for (int k=j+1; k<n; k++) {
+                    int fourth = target -(arr[i] + arr[j] + arr[k]);
+                    if (hashSet.contains(fourth)) {
+                        List<Integer> temp = Arrays.asList(arr[i], arr[j], arr[k], fourth);
+                        temp.sort(null);
+                        set.add(temp);
+                    }
+                    hashSet.add(arr[k]);
                 }
             }
         }
