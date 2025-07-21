@@ -3,8 +3,10 @@ package Arrays.Hard;
 import java.util.Arrays;
 
 public class MergeSortedArraysWithoutExtraSpace {
+    // TC = O(n+m) + O(n+m)
+    // SC = O(n+m)
     public static void mergeSortedArrays(long[] arr1, long[] arr2, int n, int m) {
-        long[] arr3 = new long[n+m];
+        /*long[] arr3 = new long[n+m];
         int left = 0;
         int right = 0;
         int index = 0;
@@ -25,13 +27,26 @@ public class MergeSortedArraysWithoutExtraSpace {
         for (int i=0; i<n+m; i++) {
             if (i < n) arr1[i] = arr3[i];
             else arr2[i-n] = arr3[i];
+        } */
+
+        int left = n-1;
+        int right = 0;
+        while (left >= 0 && right < m) {
+            if (arr1[left] > arr2[right]) {
+                long temp = arr1[left];
+                arr1[left] = arr2[right];
+                arr2[right] = temp;
+                left--; right++;
+            } else break;
         }
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
         System.out.println(Arrays.toString(arr1));
         System.out.println(Arrays.toString(arr2));
     }
     public static void main(String[] args) {
-        long[] arr1 = {1,4,8,10};
-        long[] arr2 = {2,3,9};
+        long[] arr1 = {1,3,5,7};
+        long[] arr2 = {0,2,6,8,9};
         int n = arr1.length;
         int m = arr2.length;
 
