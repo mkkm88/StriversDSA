@@ -3,9 +3,16 @@ package Arrays.Hard;
 import java.util.Arrays;
 
 public class MergeSortedArraysWithoutExtraSpace {
-    // TC = O(n+m) + O(n+m)
-    // SC = O(n+m)
+    public static void swapIfGreater(long[] arr1, long[] arr2, int idx1, int idx2) {
+        if (arr1[idx1] > arr2[idx2]) {
+            long temp = arr1[idx1];
+            arr1[idx1] = arr2[idx2];
+            arr2[idx2] = temp;
+        }
+    }
     public static void mergeSortedArrays(long[] arr1, long[] arr2, int n, int m) {
+        // TC = O(n+m) + O(n+m)
+        // SC = O(n+m)
         /*long[] arr3 = new long[n+m];
         int left = 0;
         int right = 0;
@@ -29,7 +36,9 @@ public class MergeSortedArraysWithoutExtraSpace {
             else arr2[i-n] = arr3[i];
         } */
 
-        int left = n-1;
+        // TC = O(min(n,m)) + O(nlogn) + O(mlogm)
+        // SC = O(1)
+        /*int left = n-1;
         int right = 0;
         while (left >= 0 && right < m) {
             if (arr1[left] > arr2[right]) {
@@ -40,7 +49,31 @@ public class MergeSortedArraysWithoutExtraSpace {
             } else break;
         }
         Arrays.sort(arr1);
-        Arrays.sort(arr2);
+        Arrays.sort(arr2);*/
+
+        int len = n +m;
+        int gap = (len / 2) + (len % 2);
+        while (gap > 0) {
+            int left = 0;
+            int right = left + gap;
+            while (right < len) {
+                // arr1 and arr2
+                if (left < n && right >= n) {
+                    swapIfGreater(arr1, arr2, left, right-n);
+                }
+                // arr2 and arr2
+                else if (left >= n) {
+                    swapIfGreater(arr2, arr2, left-n, right-n);
+                }
+                // arr1 and arr1
+                else {
+                    swapIfGreater(arr1, arr1, left, right);
+                }
+                left++; right++;
+            }
+            if (gap == 1) break;
+            gap = (gap / 2) + (gap % 2);
+        }
         System.out.println(Arrays.toString(arr1));
         System.out.println(Arrays.toString(arr2));
     }
