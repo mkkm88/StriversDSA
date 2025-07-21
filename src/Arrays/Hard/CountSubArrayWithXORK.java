@@ -4,12 +4,20 @@ public class CountSubArrayWithXORK {
     public static int subarraysWithXORK(int[] arr, int k) {
         int n = arr.length;
         int count = 0;
-        for (int i=0; i<n; i++) {
+        /*for (int i=0; i<n; i++) {
             for (int j=i; j<n; j++) {
                 int xor = 0;
                 for (int K = i; K <=j; K++) {
                     xor = xor ^ arr[K];
                 }
+                if (xor == k) count++;
+            }
+        }*/
+
+        for (int i=0; i<n; i++) {
+            int xor = 0;
+            for (int j=i; j<n; j++) {
+                xor = xor ^ arr[j];
                 if (xor == k) count++;
             }
         }
