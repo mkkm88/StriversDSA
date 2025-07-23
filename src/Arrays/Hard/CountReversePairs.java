@@ -15,7 +15,7 @@ public class CountReversePairs {
         return count;
     }
     public static void main(String[] args) {
-        int[] arr = {3,4,1,2,5,6,8,2,4,6,10,2,9,3,1,5,7};
+        int[] arr = {40, 25, 19, 12, 9, 6, 2};
 
         int ans = reversePairs(arr);
         System.out.println(ans);
