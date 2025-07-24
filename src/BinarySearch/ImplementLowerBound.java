@@ -3,16 +3,23 @@ package BinarySearch;
 public class ImplementLowerBound {
     public static int lowerBound(int[] arr, int x) {
         int n = arr.length;
-        for (int i=0; i<n; i++) {
-            if (arr[i] >= x) {
-                return i;
+        int low = 0; int high = n-1;
+        int ans = n;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] >= x) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
             }
         }
-        return n;
+        return ans;
     }
     public static void main(String[] args) {
-        int[] arr = {3,5,8,15,19};
-        int x = 51;
+        int[] arr = {1,2,3,3,5,8,8,10,10,11};
+        int x = 9;
 
         int ans = lowerBound(arr, x);
         System.out.println(ans);
