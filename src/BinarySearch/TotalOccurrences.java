@@ -33,14 +33,23 @@ public class TotalOccurrences {
         }
         return last;
     }
-    public static void main(String[] args) {
-        int[] arr = {2,2,3,3,3,3,3,3,4};
-        int n = arr.length;
-        int target = 3;
+    public static int[] firstAndLastPosition(int[] arr, int n, int k) {
+        int first = firstOccurrence(arr, n, k);
+        if (first == -1) return new int[] { -1, -1};
+        int last = lastOccurrence(arr, n, k);
+        return new int[] {first, last};
+    }
 
-        int first = firstOccurrence(arr, n, target);
-        int last = lastOccurrence(arr, n, target);
-        int totalOccurrence = last - first + 1;
-        System.out.println("Total occurrences : " + totalOccurrence);
+    public static int count(int[] arr, int n, int x) {
+        int[] ans = firstAndLastPosition(arr, n, x);
+        if (ans[0] == -1) return 0;
+        return (ans[1] - ans[0] + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] arr =  {2, 4, 6, 8, 8, 8, 11, 13};
+        int n = 8, x = 8;
+        int ans = count(arr, n, x);
+        System.out.println("The number of occurrences is: " + ans);
     }
 }
