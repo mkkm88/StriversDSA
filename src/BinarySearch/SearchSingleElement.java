@@ -1,32 +1,36 @@
 package BinarySearch;
+import java.util.*;
 
 public class SearchSingleElement {
-    public static int searchSingleElement(int[] arr, int n) {
-        if (n == 1) return arr[0];
+    public static int singleNonDuplicate(ArrayList<Integer> arr) {
+        int n = arr.size(); // Size of the array.
+        if (n == 1)
+            return arr.get(0);
 
-        for (int i=0; i<n; i++) {
-            // check for first index
+        for (int i = 0; i < n; i++) {
+            // Check for first index:
             if (i == 0) {
-                if (arr[i] != arr[i+1]){
-                    return arr[i];
-                }
-            } else if (i == n-1) {        // check for last index
-                if (arr[i] != arr[i-1]){
-                    return arr[i];
-                }
+                if (!arr.get(i).equals(arr.get(i + 1)))
+                    return arr.get(i);
+            }
+            // Check for last index:
+            else if (i == n - 1) {
+                if (!arr.get(i).equals(arr.get(i - 1)))
+                    return arr.get(i);
             } else {
-                if (arr[i] != arr[i-1] && arr[i] != arr[i+1]) {
-                    return arr[i];
-                }
+                if (!arr.get(i).equals(arr.get(i - 1)) && !arr.get(i).equals(arr.get(i + 1)))
+                    return arr.get(i);
             }
         }
+
+        // Dummy return statement:
         return -1;
     }
-    public static void main(String[] args) {
-        int[] arr = {1,1,2,2,3,3,4,5,5,6,6};
-        int n = arr.length;
 
-        int ans = searchSingleElement(arr, n);
+    public static void main(String[] args) {
+        ArrayList<Integer> arr =
+                new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6));
+        int ans = singleNonDuplicate(arr);
         System.out.println("The single element is: " + ans);
     }
 }
