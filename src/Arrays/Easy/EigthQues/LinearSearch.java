@@ -12,8 +12,8 @@ public class LinearSearch {
         return -1;
     }
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
-        int num = 10;
+        int[] arr = {1,2,3,4,5};
+        int num = 3;
 
         System.out.println(num + " found at " + search(arr, num) + " index");
     }
