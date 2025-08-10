@@ -5,8 +5,8 @@ public class MinDaysMakeBouquets {
         int numberOfBouquets = 0;
         int count = 0;
 
-        for (int i=0;i<arr.length;i++) {
-            if (arr[i] <= day) {
+        for (int j : arr) {
+            if (j <= day) {
                 count++;
             } else {
                 numberOfBouquets += (count / k);
@@ -16,7 +16,8 @@ public class MinDaysMakeBouquets {
         numberOfBouquets += (count / k);
         return numberOfBouquets >= m;
     }
-    public static int minimumDaysToMakeBouquets(int[] arr, int m, int k) {
+
+    /*public static int minimumDaysToMakeBouquets(int[] arr, int m, int k) {
         long val = (long) m * k;
         int n = arr.length;
         if (val > n) return -1;
@@ -35,6 +36,33 @@ public class MinDaysMakeBouquets {
             }
         }
         return -1;
+    }*/
+
+    public static int minimumDaysToMakeBouquets(int[] arr, int m, int k) {
+        long val = (long) m * k;
+        int n = arr.length;
+        if (val > n) return -1;
+
+        int mini = Integer.MAX_VALUE;
+        int maxi = Integer.MIN_VALUE;
+
+        for (int j : arr) {
+            mini = Math.min(mini, j);
+            maxi = Math.max(maxi, j);
+        }
+
+        int low = mini;
+        int high = maxi;
+        while (low <= high) {
+            int mid = low + (high - low)/2;
+
+            if (possibleDays(arr, mid, m, k)) {
+                high = mid - 1;
+            } else  {
+                low = mid + 1;
+            }
+        }
+        return low;
     }
     public static void main(String[] args) {
         int[] arr = {7,7,7,7,13,11,12,7};

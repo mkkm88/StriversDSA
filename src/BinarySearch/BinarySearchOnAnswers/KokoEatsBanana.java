@@ -2,7 +2,6 @@ package BinarySearch.BinarySearchOnAnswers;
 
 public class KokoEatsBanana {
     public static int maxElement(int[] arr) {
-        int n = arr.length;
         int maxi = Integer.MIN_VALUE;
 
         for (int j : arr) {
@@ -12,7 +11,6 @@ public class KokoEatsBanana {
     }
 
     public static int calculateTotalHours(int[] arr, int hourly) {
-        int n = arr.length;
         int totalH = 0;
         for (int j : arr) {
             totalH += (int) Math.ceil((double) j / (double) (hourly));
@@ -23,6 +21,7 @@ public class KokoEatsBanana {
         int low = 0;
         int high = maxElement(arr);
         int ans = Integer.MAX_VALUE;
+
         while (low <= high) {
             int mid = (low + high) / 2;
             int totalHours = calculateTotalHours(arr, mid);
